@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p141721-e1520045.adobeaemcloud.com/bin/franklin.delivery/varunstech/aem-eds/main"
+    url: "https://author-p141721-e1521873.adobeaemcloud.com/bin/franklin.delivery/varunstech/aem-eds/main"
     type: "markup"
     suffix: ".html"
