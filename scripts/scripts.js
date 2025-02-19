@@ -10,6 +10,7 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  getMetadata,
 } from './aem.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
@@ -73,6 +74,24 @@ function buildAutoBlocks() {
   }
 }
 
+async function decorateTemplates(main) {
+  try {
+    const template = getMetadata('template')?.toLowerCase();
+    const templates = ['side-nav', 'news-article', 'contact-us'];
+
+    if (templates.includes(template)) {
+      const mod = await import(`../templates/${template}/${template}.js`);
+      await loadCSS(`${window.hlx.codeBasePath}/templates/${template}/${template}.css`);
+      if (mod.default) {
+        await mod.default(main);
+      }
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Decorate Templates failed', error);
+  }
+}
+
 /**
  * Decorates the main element.
  * @param {Element} main The main element
@@ -97,6 +116,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    await decorateTemplates(main);
     document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
   }
