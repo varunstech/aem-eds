@@ -38,6 +38,12 @@ const markerOnClick = (infoWindow, location, map, marker) => {
 /* eslint-disable  no-undef */
 const mapProcessing = (locations) => {
   const mapContainer = div({ class: 'google-map' });
+  if (locations.length === 0) {
+    locations = [{
+      lat: -33.860451,
+      lng: 151.204639,
+    }];
+  }
 
   window.initMap = () => {
     const map = new google.maps.Map(document.getElementsByClassName('google-map')[0], {
