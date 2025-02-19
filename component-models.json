@@ -154,6 +154,20 @@
     "fields": [
       {
         "component": "text",
+        "name": "heading",
+        "label": "Heading",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "school-name",
+        "label": "School Name",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
         "valueType": "string",
         "name": "address",
         "label": "Address",
@@ -161,8 +175,29 @@
       },
       {
         "component": "text",
-        "name": "phoneNumber",
+        "name": "phone-number",
         "label": "Phone Number",
+        "valueType": "number",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "email",
+        "label": "Email Address",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "latitude",
+        "label": "Latitude",
+        "valueType": "string",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "longitude",
+        "label": "Longitude",
         "valueType": "string",
         "value": ""
       }
