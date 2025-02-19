@@ -1,3 +1,7 @@
+.hamburger.hidden {
+    display: none;
+  }
+
 header nav .global-header,
 header nav .global-quicklinks,
 header nav .local-header,
@@ -260,11 +264,13 @@ header nav .mobile-menu .mobile-global-links li a {
     }
 
     header nav .global-header a {
-        font-size: 0.8rem;
-        font-weight: 500;
-        line-height: 1;
+        font-family: montserrat;
+        font-size: 0.75rem;
+        font-weight: 600;
+        line-height: 10px;
         vertical-align: top;
         text-decoration: none;
+        letter-spacing: 0.36px;
     }
 
     /* Global Quicklinks Section */
@@ -290,13 +296,13 @@ header nav .mobile-menu .mobile-global-links li a {
 
     header nav .global-quicklinks ul>li a:any-link {
         font-family: "Zilla Slab";
-        font-size: .875rem;
+        font-size: .9rem;
         font-weight: 400;
         text-decoration: none;
-        padding: 0 16px;
+        padding: 0px 16px;
         line-height: 1;
         position: relative;
-        top: -2px;
+        top: -10px;
         text-transform: uppercase;
         cursor: pointer;
         background: transparent;
@@ -304,8 +310,21 @@ header nav .mobile-menu .mobile-global-links li a {
         display: inline-block;
     }
 
-    header nav .global-quicklinks ul>li:nth-of-type(n+2) {
+    header nav .global-quicklinks a:any-link:hover {
+        text-decoration: underline;
+    }
+
+    header nav .global-quicklinks ul>li:nth-of-type(n+2)::before {
+        content: '';
         border-left: 1px solid #fff;
+        position: absolute;
+        left: 0;
+        top: 5px;
+        height: 100%;
+    }
+
+    header nav .global-quicklinks ul>li:nth-of-type(n+2) {
+        position: relative;
     }
 
     /* Local Header Section */
@@ -385,8 +404,7 @@ header nav .mobile-menu .mobile-global-links li a {
         flex: 1;
         justify-content: space-between;
         position: relative;
-        top: 18px;
-        margin: 0;
+        margin: -8px 0 0 0;
         padding: 0;
         list-style: none;
     }
@@ -396,29 +414,18 @@ header nav .mobile-menu .mobile-global-links li a {
         text-decoration: none;
     }
 
-    header nav .dropdown-menu ul>li>a {
+    header nav .dropdown-menu ul>li>p>a {
         padding: 24px 20px;
     }
 
-    header nav .dropdown-menu ul>li>a.selected {
+    header nav .dropdown-menu ul>li>p>a.selected {
         background-color: #ffffff;
         color: #02084b;
     }
 
-    header nav .dropdown-menu .search-icon {
-        position: relative;
-        width: 1.3rem;
-        height: 1.5rem;
-        background: url('../../icons/search.svg') no-repeat center;
-        background-size: contain;
-        cursor: pointer;
-        filter: brightness(0) invert(1);
-        margin-top: 18px;
-    }
-
     /* Submenu Section */
     header nav .dropdown-menu .submenu-wrapper {
-        top: 3rem;
+        top: 3.3rem;
         left: 0px;
         width: 100%;
         max-width: 1200px;
@@ -428,6 +435,10 @@ header nav .mobile-menu .mobile-global-links li a {
         padding: 15px 0 30px 0;
         font-size: 1rem;
         position: absolute;
+        box-shadow: 0 2px 8px -2px rgba(0, 0, 0, 0.1);
+        border-left: 1px solid #e6e6e6;
+        border-right: 1px solid #e6e6e6;
+        border-bottom: 1px solid #e6e6e6;
     }
 
     header nav .dropdown-menu .submenu-wrapper h3 {
@@ -498,8 +509,10 @@ header nav .mobile-menu .mobile-global-links li a {
         background-size: contain;
         filter: brightness(0) invert(1);
         transform: scale(1.2);
-        vertical-align: middle;
+        vertical-align: bottom;
         margin-left: 18rem;
+        position: relative;
+        top: 9px;
     }
 }
 
