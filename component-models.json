@@ -154,8 +154,17 @@
     "fields": [
       {
         "component": "text",
-        "name": "linkText",
-        "label": "Text"
+        "valueType": "number",
+        "name": "columns",
+        "value": "",
+        "label": "Columnsss"
+      },
+      {
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
       }
     ]
   },

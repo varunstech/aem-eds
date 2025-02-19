@@ -1,15 +1,15 @@
 {
   "definitions": [
     {
-      "title": "Contact Us Map",
+      "title": "contact-us-map",
       "id": "contact-us-map",
       "plugins": {
         "xwalk": {
           "page": {
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
-              "name": "Contact Us Map",
-              "filter": "contact-us-map"
+              "columns": "2",
+              "rows": "1"
             }
           }
         }
@@ -22,8 +22,17 @@
       "fields": [
         {
           "component": "text",
-          "name": "linkText",
-          "label": "Text"
+          "valueType": "number",
+          "name": "columns",
+          "value": "",
+          "label": "Columnsss"
+        },
+        {
+          "component": "text",
+          "valueType": "number",
+          "name": "rows",
+          "value": "",
+          "label": "Rows"
         }
       ]
     }
