@@ -106,6 +106,10 @@
           {
             "name": "Highlight",
             "value": "highlight"
+          },
+          {
+            "name": "Blue Background",
+            "value": "blue-background"
           }
         ]
       }
@@ -154,20 +158,13 @@
     "fields": [
       {
         "component": "text",
-        "name": "heading",
-        "label": "Heading",
-        "valueType": "string",
-        "value": ""
-      },
-      {
-        "component": "text",
         "name": "school-name",
         "label": "School Name",
         "valueType": "string",
         "value": ""
       },
       {
-        "component": "text",
+        "component": "richtext",
         "valueType": "string",
         "name": "address",
         "label": "Address",

@@ -1,5 +1,5 @@
 import { loadScript } from '../../scripts/aem.js';
-import { div } from '../../scripts/dom-helpers.js';
+import { h3, div } from '../../scripts/dom-helpers.js';
 
 const markerOnClick = (infoWindow, location, map, marker) => {
   const infoWindowDiv = document.querySelector('.info-window');
@@ -42,8 +42,6 @@ const mapProcessing = (locations) => {
     locations[0].lat = -33.860451;
     locations[0].lng = 151.204639;
   }
-
-  console.log(locations);
 
   window.initMap = () => {
     const map = new google.maps.Map(document.getElementsByClassName('google-map')[0], {
@@ -109,43 +107,49 @@ const mapProcessing = (locations) => {
 };
 
 export default function decorate(block) {
-  const tempDiv = div({ class: 'locations' });
   const locations = [];
+  const tempDiv = div({ class: 'locations' });
 
-  [...block.children].forEach((row) => {
-    const label = row.children[0];
-    const summary = document.createElement('summary');
-    summary.className = 'accordion-item-label';
-    summary.append(...label.childNodes);
-    const body = row.children[1];
-    body.className = 'accordion-item-body';
-    const details = document.createElement('details');
-    details.className = 'accordion-item';
-    details.append(summary, body);
-
+  [...block.children].forEach((row, index) => {
     const location = {
-      name: summary.textContent,
+      name: '',
+      address: '',
+      phone: '',
+      email: '',
+      lat: null,
+      lng: null,
     };
 
-    body.querySelectorAll('p').forEach((x, index) => {
-      if (index === 0) {
-        x.classList.add('location');
-        location.address = x.textContent;
-      } else if (index === 1) {
-        x.classList.add('phone');
-        location.phone = x.textContent;
-      } else if (index === 2) {
-        x.classList.add('email');
-        location.email = x.textContent;
-      } else {
-        x.classList.add('lat-lng');
-        location.lat = Number(x.textContent.split(',')[0]);
-        location.lng = Number(x.textContent.split(',')[1]);
-      }
-    });
+    if (index === 0) {
+      location.name = h3(row.textContent);
+    } else if (index === 1) {
+      location.address = row.textContent;
+    } else if (index === 2) {
+      location.phone = row.textContent;
+    } else if (index === 3) {
+      location.email = row.textContent;
+    } else if (index === 4) {
+      location.lat = Number(row.textContent);
+    } else if (index === 5) {
+      location.lng = Number(row.textContent);
+    }
+    const summary = document.createElement('summary');
+    summary.className = 'accordion-item-label';
+    summary.appendChild(h3(location.name));
 
+    const details = document.createElement('details');
+    details.className = 'accordion-item';
+
+    const body = document.createElement('div');
+    body.className = 'accordion-item-body';
+    body.innerHTML = `
+      <p class="location">${location.address}</p>
+      <p class="phone">${location.phone}</p>
+      <p class="email">${location.email}</p>
+    `;
+
+    details.append(summary, body);
     locations.push(location);
-    row.replaceWith(details);
     tempDiv.append(details);
   });
 

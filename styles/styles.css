@@ -19,6 +19,7 @@
      --text-color: #131313;
      --link-color: #3b63fb;
      --black-color: #000;
+     --navy-color: #02084b;
      --light-grey-color: #e0e0e0;
      --link-hover-color: #1d3ecf;
      --body-font-family: "Open Sans", "Open Sans Fallback", "sans-serif";
@@ -311,6 +312,10 @@
  main>.section:first-of-type {
      margin-top: 0;
  }
+
+main .section.blue-background {
+    background-color: var(--navy-color);
+}
  
  @media (width>=900px) {
      main>.section>div {
