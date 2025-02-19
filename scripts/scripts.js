@@ -96,7 +96,7 @@ function buildAutoBlocks(main) {
 
 async function decorateTemplates(main) {
   try {
-    const template = getMetadata('template')?.toLowerCase();
+    const template = 'contact-us'; // getMetadata('template')?.toLowerCase(); // todo piyush change this
     const templates = ['side-nav', 'news-article', 'contact-us'];
 
     if (templates.includes(template)) {

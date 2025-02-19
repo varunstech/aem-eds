@@ -44,6 +44,7 @@
 .block.contact-us-map details[open] summary::after {
   content: '×';
   transform: translateY(-50%);
+  color: white;
 }
 
 .block.contact-us-map details .accordion-item-body {
@@ -134,6 +135,10 @@
 .block.contact-us-map .info-window-logo {
   max-height: 50px;
   max-width: 100px;
+}
+
+.block.contact-us-map .locations p {
+  color: white;
 }
 
 @media (width >= 1024px) {
