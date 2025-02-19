@@ -49,6 +49,21 @@ export default async function decorate(block) {
           lists[0].classList.add('mobile-global-links');
           lists[1].classList.add('mobile-dropdown-menu');
           
+          // Restructure list items to remove p tags (for all levels)
+          const allListItems = lists[1].querySelectorAll('li');
+          allListItems.forEach(li => {
+            const p = li.querySelector('p');
+            if (p) {
+              const a = p.querySelector('a');
+              if (a) {
+                // Move the anchor before any existing ul
+                const ul = li.querySelector('ul');
+                li.insertBefore(a, ul || null);
+                p.remove();
+              }
+            }
+          });
+          
           // Add click handlers for mobile dropdown menu
           const dropdownItems = lists[1].querySelectorAll('li:has(> ul)');
           dropdownItems.forEach(item => {
@@ -99,7 +114,7 @@ export default async function decorate(block) {
             const isVisible = wrapper.style.display === 'block';
             
             // Remove selected class from all links
-            document.querySelectorAll('.dropdown-menu ul > li > a').forEach(link => {
+            document.querySelectorAll('.dropdown-menu ul > li > p >a').forEach(link => {
               link.classList.remove('selected');
             });
             
@@ -144,12 +159,14 @@ export default async function decorate(block) {
     const mobileMenu = nav.querySelector('.mobile-menu');
     mobileMenu.classList.toggle('open');
     overlay.classList.toggle('open');
+    hamburger.classList.toggle('hidden');
   });
 
   overlay.addEventListener('click', () => {
     const mobileMenu = nav.querySelector('.mobile-menu');
     mobileMenu.classList.remove('open');
     overlay.classList.remove('open');
+    hamburger.classList.remove('hidden');
   });
 
   const navWrapper = document.createElement('div');
