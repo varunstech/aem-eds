@@ -1,4 +1,5 @@
 import { loadScript } from '../../scripts/aem.js';
+import { p } from '../../scripts/dom-helpers.js';
 import { h3, div } from '../../scripts/dom-helpers.js';
 
 const markerOnClick = (infoWindow, location, map, marker) => {
@@ -15,7 +16,7 @@ const markerOnClick = (infoWindow, location, map, marker) => {
       // add dynamice class to the info window
       `<div class='info-window visible'>
         <div>
-          <img class='info-window-logo' src='/content/fspslogo.png'>
+          <img class='info-window-logo' src='/content/dam/doe-sample-site-1/doe/fspslogo.png'>
         </div>
         <div>
           <strong>${location.name}</strong><br>
@@ -109,49 +110,45 @@ const mapProcessing = (locations) => {
 export default function decorate(block) {
   const locations = [];
   const tempDiv = div({ class: 'locations' });
+  const summary = document.createElement('summary');
+  summary.className = 'accordion-item-label';
+  const details = document.createElement('details');
+  details.className = 'accordion-item';
+
+  const body = document.createElement('div');
+  body.className = 'accordion-item-body';
+  const location = {
+    name: '',
+    address: '',
+    phone: '',
+    email: '',
+    lat: null,
+    lng: null,
+  };
 
   [...block.children].forEach((row, index) => {
-    const location = {
-      name: '',
-      address: '',
-      phone: '',
-      email: '',
-      lat: null,
-      lng: null,
-    };
-
     if (index === 0) {
-      location.name = h3(row.textContent);
+      location.name = row.textContent;
+      summary.appendChild(h3(location.name));
     } else if (index === 1) {
       location.address = row.textContent;
+      body.appendChild(p({ class: 'location' }, location.address));
     } else if (index === 2) {
       location.phone = row.textContent;
+      body.appendChild(p({ class: 'phone' }, location.phone));
     } else if (index === 3) {
       location.email = row.textContent;
+      body.appendChild(p({ class: 'email' }, location.email));
     } else if (index === 4) {
       location.lat = Number(row.textContent);
     } else if (index === 5) {
       location.lng = Number(row.textContent);
     }
-    const summary = document.createElement('summary');
-    summary.className = 'accordion-item-label';
-    summary.appendChild(h3(location.name));
-
-    const details = document.createElement('details');
-    details.className = 'accordion-item';
-
-    const body = document.createElement('div');
-    body.className = 'accordion-item-body';
-    body.innerHTML = `
-      <p class="location">${location.address}</p>
-      <p class="phone">${location.phone}</p>
-      <p class="email">${location.email}</p>
-    `;
-
-    details.append(summary, body);
-    locations.push(location);
-    tempDiv.append(details);
   });
+
+  details.append(summary, body);
+  locations.push(location);
+  tempDiv.append(details);
 
   const mapContainer = mapProcessing(locations);
   block.replaceChildren(tempDiv, div({ class: 'map' }, mapContainer));

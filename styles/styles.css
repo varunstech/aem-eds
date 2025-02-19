@@ -315,6 +315,11 @@
 main .section.blue-background {
     background-color: var(--navy-color);
 }
+
+main .section.blue-background * {
+    color: var(--background-color) !important;
+}
+ 
  
  @media (width>=900px) {
      main>.section>div {

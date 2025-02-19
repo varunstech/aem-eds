@@ -97,6 +97,7 @@
   font-family: FontAwesome, sans-serif;
   margin-right: 5px;
   display: inline-block;
+  color: black;
 }
 
 .block.contact-us-map .google-map * {
