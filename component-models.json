@@ -153,24 +153,11 @@
     "id": "contact-us-map",
     "fields": [
       {
-        "component": "repeater",
-        "name": "columns",
-        "label": "Contact Map Rows",
-        "min": 1,
-        "fields": [
-          {
-            "component": "text",
-            "name": "text",
-            "label": "Column 1 Text",
-            "valueType": "string"
-          },
-          {
-            "component": "text",
-            "name": "text",
-            "label": "Column 2 Text",
-            "valueType": "string"
-          }
-        ]
+        "component": "text",
+        "valueType": "number",
+        "name": "rows",
+        "value": "",
+        "label": "Rows"
       }
     ]
   },

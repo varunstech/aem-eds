@@ -133,16 +133,10 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "blocks/contact-us-map",
+                "resourceType": "core/franklin/components/columns/v1/columns",
                 "template": {
-                  "columns": [
-                    {
-                      "text": ""
-                    },
-                    {
-                      "text": ""
-                    }
-                  ]
+                  "columns": "2",
+                  "rows": "1"
                 }
               }
             }

@@ -43,6 +43,12 @@
   {
     "id": "contact-us-map",
     "components": [
+      "contact-us-map"
+    ]
+  },
+  {
+    "id": "contact-us-map",
+    "components": [
       "text"
     ]
   }

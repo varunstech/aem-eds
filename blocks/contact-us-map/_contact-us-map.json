@@ -6,16 +6,10 @@
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "blocks/contact-us-map",
+            "resourceType": "core/franklin/components/columns/v1/columns",
             "template": {
-              "columns": [
-                {
-                  "text": ""
-                },
-                {
-                  "text": ""
-                }
-              ]
+              "columns": "2",
+              "rows": "1"
             }
           }
         }
@@ -27,29 +21,22 @@
       "id": "contact-us-map",
       "fields": [
         {
-          "component": "repeater",
-          "name": "columns",
-          "label": "Contact Map Rows",
-          "min": 1,
-          "fields": [
-            {
-              "component": "text",
-              "name": "text",
-              "label": "Column 1 Text",
-              "valueType": "string"
-            },
-            {
-              "component": "text",
-              "name": "text",
-              "label": "Column 2 Text",
-              "valueType": "string"
-            }
-          ]
+          "component": "text",
+          "valueType": "number",
+          "name": "rows",
+          "value": "",
+          "label": "Rows"
         }
       ]
     }
   ],
   "filters": [
+    {
+      "id": "contact-us-map",
+      "components": [
+        "contact-us-map"
+      ]
+    },
     {
       "id": "contact-us-map",
       "components": [
