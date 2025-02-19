@@ -153,7 +153,7 @@
                   "name": "Accordion Item",
                   "model": "accordion-item",
                   "summary": "Lorem Ipsum",
-                  "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
+                  "text": "<p>Address: Fort Street Public School<br>Observatory Hill<br>2 Upper Fort Street<br>MILLERS POINT NSW 2000</p><p>02 9247 2963</p><p>fortstreet-p.school@det.nsw.edu.au</p><p>-33.860451, 151.204639</p>"
                 }
               }
             }
