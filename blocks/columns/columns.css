@@ -18,8 +18,15 @@
   display: flex;
   flex-direction: column;
   position: relative;
+  list-style: none;
 }
 
+.columns > div > div ul,
+.columns > div > div li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
 .columns h2 {
   font-family: "Zilla Slab", serif;
