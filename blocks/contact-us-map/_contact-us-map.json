@@ -6,27 +6,15 @@
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/block/v1/block",
+            "resourceType": "blocks/contact-us-map",
             "template": {
-              "name": "Contact Us Map",
-              "filter": "contact-us-map"
-            }
-          }
-        }
-      }
-    },
-    {
-      "title": "Accordion Item",
-      "id": "accordion-item",
-      "plugins": {
-        "xwalk": {
-          "page": {
-            "resourceType": "core/franklin/components/block/v1/block/item",
-            "template": {
-              "name": "Accordion Item",
-              "model": "accordion-item",
-              "summary": "Lorem Ipsum 777777777",
-              "text": "<p>Address: Fort Street Public School<br>Observatory Hill<br>2 Upper Fort Street<br>MILLERS POINT NSW 2000</p><p>02 9247 2963</p><p>fortstreet-p.school@det.nsw.edu.au</p><p>-33.860451, 151.204639</p>"
+              "address": "",
+              "phoneNumber": "",
+              "email": "",
+              "coordinates": {
+                "latitude": "",
+                "longitude": ""
+              }
             }
           }
         }
@@ -35,21 +23,42 @@
   ],
   "models": [
     {
-      "id": "accordion-item",
+      "id": "contact-us-map",
       "fields": [
         {
-          "component": "text",
+          "component": "textarea",
+          "name": "address",
+          "label": "Address",
           "valueType": "string",
-          "name": "summary",
-          "value": "",
-          "label": "Summary"
+          "required": true
         },
         {
-          "component": "richtext",
-          "name": "text",
-          "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "component": "text",
+          "name": "phoneNumber",
+          "label": "Phone Number",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "email",
+          "label": "Email Address",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "latitude",
+          "label": "Latitude",
+          "valueType": "string",
+          "required": true
+        },
+        {
+          "component": "text",
+          "name": "longitude",
+          "label": "Longitude",
+          "valueType": "string",
+          "required": true
         }
       ]
     }
@@ -58,7 +67,7 @@
     {
       "id": "contact-us-map",
       "components": [
-        "accordion-item"
+        "text"
       ]
     }
   ]

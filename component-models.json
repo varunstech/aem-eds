@@ -150,21 +150,42 @@
     ]
   },
   {
-    "id": "accordion-item",
+    "id": "contact-us-map",
     "fields": [
       {
-        "component": "text",
+        "component": "textarea",
+        "name": "address",
+        "label": "Address",
         "valueType": "string",
-        "name": "summary",
-        "value": "",
-        "label": "Summary"
+        "required": true
       },
       {
-        "component": "richtext",
-        "name": "text",
-        "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "component": "text",
+        "name": "phoneNumber",
+        "label": "Phone Number",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "email",
+        "label": "Email Address",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "latitude",
+        "label": "Latitude",
+        "valueType": "string",
+        "required": true
+      },
+      {
+        "component": "text",
+        "name": "longitude",
+        "label": "Longitude",
+        "valueType": "string",
+        "required": true
       }
     ]
   },
