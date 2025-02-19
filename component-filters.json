@@ -16,7 +16,14 @@
       "cards",
       "columns",
       "fragment",
-      "contact-us-map"
+      "contact-us-map",
+      "accordion"
+    ]
+  },
+  {
+    "id": "accordion",
+    "components": [
+      "accordion-item"
     ]
   },
   {
