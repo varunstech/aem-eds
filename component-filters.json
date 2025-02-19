@@ -49,10 +49,7 @@
   {
     "id": "contact-us-map",
     "components": [
-      "text",
-      "image",
-      "button",
-      "title"
+      "text"
     ]
   }
 ]
