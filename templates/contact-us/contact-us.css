@@ -15,6 +15,7 @@
 
 main .section .block.contact-us-map details summary h3 {
 	font-weight: var(--font-weight-bold);
+	padding-top: 0;
 }
 
 .contact-us main .section.contact-us-map-container h3::before {

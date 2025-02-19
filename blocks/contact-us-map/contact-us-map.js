@@ -132,7 +132,21 @@ export default function decorate(block) {
       summary.appendChild(h3(location.name));
     } else if (index === 1) {
       location.address = row.textContent;
-      body.appendChild(p({ class: 'location' }, location.address));
+      const tempP = p({ class: 'location' });
+      let text = '';
+      row.querySelectorAll('p').forEach((childP) => {
+        text += childP.textContent + '<br>';
+      });
+      tempP.innerHTML = text;
+      body.appendChild(tempP);
+      // body.classList.add('location');
+      // [...row.children][0].classList.add('location');
+      // body.appendChild([...row.children][0]);
+      // console.log([...row.children][0]);
+      // [...row.children]?.forEach((child) => {
+      //   body.appendChild(child);
+      // });
+      // body.appendChild(p({ class: 'location' }, row));
     } else if (index === 2) {
       location.phone = row.textContent;
       body.appendChild(p({ class: 'phone' }, location.phone));
