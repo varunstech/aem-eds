@@ -39,6 +39,7 @@
   font-size: 24px;
   font-weight: bold;
   transition: transform 0.2s, content 0.2s;
+  color: white;
 }
 
 .block.contact-us-map details[open] summary::after {
