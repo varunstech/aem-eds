@@ -153,10 +153,10 @@
     "id": "contact-us-map",
     "fields": [
       {
-        "component": "textarea",
+        "component": "text",
+        "valueType": "string",
         "name": "address",
         "label": "Address",
-        "valueType": "string",
         "required": true
       },
       {

@@ -133,16 +133,7 @@
           "plugins": {
             "xwalk": {
               "page": {
-                "resourceType": "blocks/contact-us-map",
-                "template": {
-                  "address": "",
-                  "phoneNumber": "",
-                  "email": "",
-                  "coordinates": {
-                    "latitude": "",
-                    "longitude": ""
-                  }
-                }
+                "resourceType": "core/franklin/components/block/v1/block"
               }
             }
           }
