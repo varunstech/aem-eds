@@ -153,11 +153,11 @@
     "id": "contact-us-map",
     "fields": [
       {
-        "component": "text",
-        "valueType": "number",
-        "name": "rows",
+        "component": "richtext",
+        "name": "text",
         "value": "",
-        "label": "Rows"
+        "label": "Text",
+        "valueType": "string"
       },
       {
         "component": "richtext",
