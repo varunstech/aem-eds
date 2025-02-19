@@ -6,7 +6,11 @@
       "plugins": {
         "xwalk": {
           "page": {
-            "resourceType": "core/franklin/components/block/v1/block"
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Contact Us Map",
+              "model": "contact-us-map"
+            }
           }
         }
       }
@@ -20,7 +24,15 @@
           "component": "text",
           "valueType": "string",
           "name": "address",
-          "label": "Address"
+          "label": "Address",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "phoneNumber",
+          "label": "Phone Number",
+          "valueType": "string",
+          "value": ""
         }
       ]
     }

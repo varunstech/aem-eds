@@ -156,7 +156,15 @@
         "component": "text",
         "valueType": "string",
         "name": "address",
-        "label": "Address"
+        "label": "Address",
+        "value": ""
+      },
+      {
+        "component": "text",
+        "name": "phoneNumber",
+        "label": "Phone Number",
+        "valueType": "string",
+        "value": ""
       }
     ]
   },
