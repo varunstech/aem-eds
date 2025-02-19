@@ -156,36 +156,7 @@
         "component": "text",
         "valueType": "string",
         "name": "address",
-        "label": "Address",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "phoneNumber",
-        "label": "Phone Number",
-        "valueType": "string",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "email",
-        "label": "Email Address",
-        "valueType": "string",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "latitude",
-        "label": "Latitude",
-        "valueType": "string",
-        "required": true
-      },
-      {
-        "component": "text",
-        "name": "longitude",
-        "label": "Longitude",
-        "valueType": "string",
-        "required": true
+        "label": "Address"
       }
     ]
   },
