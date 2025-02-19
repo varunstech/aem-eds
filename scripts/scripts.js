@@ -11,7 +11,9 @@ import {
   loadBlocks,
   loadCSS,
   getMetadata,
+  buildBlock,
 } from './aem.js';
+import { div, h1, p } from './dom-helpers.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -61,12 +63,30 @@ async function loadFonts() {
   }
 }
 
+const buildBreadcrumb = (main) => {
+  const noBreadcrumb = getMetadata('no-breadcrumb');
+  if ((!noBreadcrumb || noBreadcrumb?.toLowerCase() !== 'true')
+    && main.parentElement) {
+    main.prepend(div(buildBlock('breadcrumb', { elems: [] })));
+    const breadcrumb = main.querySelector('div');
+    const breadcrumbTitle = getMetadata('breadcrumb-title') || getMetadata('title') || 'Page not found';
+    breadcrumb.classList.add('grey-background');
+    const fromTheDepartment = getMetadata('from-the-department');
+    if (fromTheDepartment) {
+      breadcrumb.appendChild(div(p({ class: 'from-the-department' }, 'From the department'), h1(breadcrumbTitle)));
+    } else {
+      breadcrumb.appendChild(h1(breadcrumbTitle));
+    }
+  }
+};
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
+    buildBreadcrumb(main);
     // TODO: add auto block, if needed
   } catch (error) {
     // eslint-disable-next-line no-console
