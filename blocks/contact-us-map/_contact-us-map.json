@@ -9,7 +9,24 @@
             "resourceType": "core/franklin/components/block/v1/block",
             "template": {
               "name": "Contact Us Map",
-              "model": "contact-us-map"
+              "filter": "contact-us-map"
+            }
+          }
+        }
+      }
+    },
+    {
+      "title": "Accordion Item",
+      "id": "accordion-item",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block/item",
+            "template": {
+              "name": "Accordion Item",
+              "model": "accordion-item",
+              "summary": "Lorem Ipsum",
+              "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur volutpat consequat dui, sit amet ...</p>"
             }
           }
         }
@@ -18,18 +35,18 @@
   ],
   "models": [
     {
-      "id": "contact-us-map",
+      "id": "accordion-item",
       "fields": [
         {
-          "component": "richtext",
-          "name": "text",
+          "component": "text",
+          "valueType": "string",
+          "name": "summary",
           "value": "",
-          "label": "Text",
-          "valueType": "string"
+          "label": "Summary"
         },
         {
           "component": "richtext",
-          "name": "map details",
+          "name": "text",
           "value": "",
           "label": "Text",
           "valueType": "string"
@@ -38,5 +55,11 @@
     }
   ],
   "filters": [
+    {
+      "id": "contact-us-map",
+      "components": [
+        "accordion-item"
+      ]
+    }
   ]
 }

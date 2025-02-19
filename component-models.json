@@ -150,18 +150,18 @@
     ]
   },
   {
-    "id": "contact-us-map",
+    "id": "accordion-item",
     "fields": [
       {
-        "component": "richtext",
-        "name": "text",
+        "component": "text",
+        "valueType": "string",
+        "name": "summary",
         "value": "",
-        "label": "Text",
-        "valueType": "string"
+        "label": "Summary"
       },
       {
         "component": "richtext",
-        "name": "map details",
+        "name": "text",
         "value": "",
         "label": "Text",
         "valueType": "string"
