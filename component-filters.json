@@ -39,11 +39,5 @@
       "button",
       "title"
     ]
-  },
-  {
-    "id": "contact-us-map",
-    "components": [
-      "column"
-    ]
   }
 ]

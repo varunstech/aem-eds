@@ -155,16 +155,16 @@
       {
         "component": "text",
         "valueType": "number",
-        "name": "columns",
-        "value": "",
-        "label": "Columnsss"
-      },
-      {
-        "component": "text",
-        "valueType": "number",
         "name": "rows",
         "value": "",
         "label": "Rows"
+      },
+      {
+        "component": "richtext",
+        "name": "map details",
+        "value": "",
+        "label": "Text",
+        "valueType": "string"
       }
     ]
   },
