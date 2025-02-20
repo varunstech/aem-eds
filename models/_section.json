@@ -27,6 +27,10 @@
             {
               "name": "Highlight",
               "value": "highlight"
+            },
+            {
+              "name": "Blue Background",
+              "value": "blue-background"
             }
           ]
         }
@@ -44,7 +48,8 @@
         "hero",
         "cards",
         "columns",
-        "fragment"
+        "fragment",
+        "contact-us-map"
       ]
     }
   ]

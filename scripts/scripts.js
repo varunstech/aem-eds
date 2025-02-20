@@ -10,7 +10,10 @@ import {
   waitForLCP,
   loadBlocks,
   loadCSS,
+  getMetadata,
+  buildBlock,
 } from './aem.js';
+import { div, h1, p } from './dom-helpers.js';
 
 const LCP_BLOCKS = []; // add your LCP blocks to the list
 
@@ -60,16 +63,53 @@ async function loadFonts() {
   }
 }
 
+const buildBreadcrumb = (main) => {
+  const noBreadcrumb = getMetadata('nobreadcrumb');
+  if ((!noBreadcrumb || noBreadcrumb?.toLowerCase() !== 'true')
+    && main.parentElement) {
+    main.prepend(div(buildBlock('breadcrumb', { elems: [] })));
+    const breadcrumb = main.querySelector('div');
+    const path = window.location.pathname?.split('/').pop(); // get last part of the path
+    const breadcrumbTitle = getMetadata('breadcrumb-title') || getMetadata('title') || path || 'Page not found';
+    breadcrumb.classList.add('grey-background');
+    const fromTheDepartment = getMetadata('from-the-department');
+    if (fromTheDepartment) {
+      breadcrumb.appendChild(div(p({ class: 'from-the-department' }, 'From the department'), h1(breadcrumbTitle)));
+    } else {
+      breadcrumb.appendChild(h1(breadcrumbTitle));
+    }
+  }
+};
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
  */
-function buildAutoBlocks() {
+function buildAutoBlocks(main) {
   try {
+    buildBreadcrumb(main);
     // TODO: add auto block, if needed
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
+  }
+}
+
+async function decorateTemplates(main) {
+  try {
+    const template = getMetadata('template')?.toLowerCase();
+    const templates = ['side-nav', 'news-article', 'contact-us'];
+
+    if (templates.includes(template)) {
+      const mod = await import(`../templates/${template}/${template}.js`);
+      await loadCSS(`${window.hlx.codeBasePath}/templates/${template}/${template}.css`);
+      if (mod.default) {
+        await mod.default(main);
+      }
+    }
+  } catch (error) {
+    // eslint-disable-next-line no-console
+    console.error('Decorate Templates failed', error);
   }
 }
 
@@ -97,6 +137,7 @@ async function loadEager(doc) {
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);
+    await decorateTemplates(main);
     document.body.classList.add('appear');
     await waitForLCP(LCP_BLOCKS);
   }

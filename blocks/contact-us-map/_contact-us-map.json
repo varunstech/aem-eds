@@ -1,0 +1,69 @@
+{
+  "definitions": [
+    {
+      "title": "Contact Us Map",
+      "id": "contact-us-map",
+      "plugins": {
+        "xwalk": {
+          "page": {
+            "resourceType": "core/franklin/components/block/v1/block",
+            "template": {
+              "name": "Contact Us Map",
+              "model": "contact-us-map"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "models": [
+    {
+      "id": "contact-us-map",
+      "fields": [
+        {
+          "component": "text",
+          "name": "school-name",
+          "label": "School Name",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "richtext",
+          "valueType": "string",
+          "name": "address",
+          "label": "Address",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "phone-number",
+          "label": "Phone Number",
+          "valueType": "number",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "email",
+          "label": "Email Address",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "latitude",
+          "label": "Latitude",
+          "valueType": "string",
+          "value": ""
+        },
+        {
+          "component": "text",
+          "name": "longitude",
+          "label": "Longitude",
+          "valueType": "string",
+          "value": ""
+        }
+      ]
+    }
+  ],
+  "filters": []
+}
