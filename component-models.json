@@ -17,8 +17,11 @@
       {
         "component": "date-time",
         "valueType": "string",
+        "placeholder": "YYYY-MM-DD",
         "name": "publication-date",
-        "label": "Publication Date"
+        "label": "Publication Date",
+        "displayFormat": null,
+        "valueFormat": null
       },
       {
         "component": "text",
