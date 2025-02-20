@@ -1,5 +1,57 @@
 [
   {
+    "id": "page-metadata",
+    "fields": [
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "title",
+        "label": "Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "description",
+        "label": "Description"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "publication-date",
+        "label": "Publication Date"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "breadcrumb-title",
+        "label": "Breadcrumb Title"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "from-the-department",
+        "label": "From the Department"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "template",
+        "label": "Template"
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "nobreadcrumb",
+        "label": "Nobreadcrumb"
+      },
+      {
+        "component": "reference",
+        "name": "image",
+        "label": "Image"
+      }
+    ]
+  },
+  {
     "...": "./_image.json#/models"
   },
   {
