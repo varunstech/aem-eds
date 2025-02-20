@@ -64,7 +64,7 @@ async function loadFonts() {
 }
 
 const buildBreadcrumb = (main) => {
-  const noBreadcrumb = getMetadata('no-breadcrumb');
+  const noBreadcrumb = getMetadata('nobreadcrumb');
   if ((!noBreadcrumb || noBreadcrumb?.toLowerCase() !== 'true')
     && main.parentElement) {
     main.prepend(div(buildBlock('breadcrumb', { elems: [] })));
@@ -97,7 +97,7 @@ function buildAutoBlocks(main) {
 
 async function decorateTemplates(main) {
   try {
-    const template = 'contact-us'; // getMetadata('template')?.toLowerCase(); // todo piyush change this
+    const template = getMetadata('template')?.toLowerCase();
     const templates = ['side-nav', 'news-article', 'contact-us'];
 
     if (templates.includes(template)) {
