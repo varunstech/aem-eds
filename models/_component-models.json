@@ -16,10 +16,12 @@
       },
       {
         "component": "date-time",
-        "valueType": "date-time",
+        "valueType": "date",
         "placeholder": "YYYY-MM-DD",
         "name": "publication-date",
-        "label": "Publication Date"
+        "label": "Publication Date",
+        "displayFormat": null,
+        "valueFormat": null
       },
       {
         "component": "text",
