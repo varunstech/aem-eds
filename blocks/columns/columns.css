@@ -35,12 +35,11 @@
   color: white;
   font-weight: normal;
   height: 6.0rem;
-  font-size: 1.625rem;
-  line-height: 126%;
-  font-family: "Zilla Slab";
-  font-weight: 700;
-  font-style: 26px;
-  padding-left: 32px;
+    font-size: 1.625rem;
+    line-height: 126%;
+    font-family: "Zilla Slab";
+    font-weight: 700;
+    font-style: 26px;
 }
 
 .columns p {
@@ -160,7 +159,7 @@
 
   .columns.columns-mobile h2:hover::before,
   .columns.columns-mobile h2:focus::before {
-    width: calc(100% - 25px);
+    width: calc(100% - 2px);
   }
 
   .columns.columns-mobile h2::after {
@@ -184,37 +183,5 @@
 @media (max-width: 480px) {
   .columns.columns-mobile > div > div {
     padding: 0;
-  }
-}
-
-/* Desktop view styles for image */
-@media (min-width: 992px) {
-  .columns img {
-    aspect-ratio: auto;
-    border: none;
-    box-sizing: border-box;
-    color: rgb(0, 0, 0);
-    display: inline;
-    font-family: "Open Sans", sans-serif;
-    font-feature-settings: normal;
-    font-kerning: auto;
-    font-optical-sizing: auto;
-    font-size: 16px;
-    font-size-adjust: none;
-    font-stretch: 100%;
-    font-style: normal;
-    font-variant: normal;
-    font-weight: 400;
-    height: 405.844px;
-    letter-spacing: 0.16px;
-    line-height: 24px;
-    list-style: none;
-    max-height: 808px;
-    max-width: 100%;
-    object-fit: cover;
-    overflow: clip;
-    text-size-adjust: 100%;
-    vertical-align: middle;
-    width: 928px;
   }
 }
