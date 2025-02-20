@@ -5,18 +5,19 @@
       {
         "component": "text",
         "valueType": "string",
-        "name": "title",
+        "name": "jcr:title",
         "label": "Title"
       },
       {
         "component": "text",
         "valueType": "string",
-        "name": "description",
+        "name": "jcr:description",
         "label": "Description"
       },
       {
         "component": "date-time",
-        "valueType": "date",
+        "valueType": "string",
+        "placeholder": "YYYY-MM-DD",
         "name": "publication-date",
         "label": "Publication Date"
       },
