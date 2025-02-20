@@ -548,7 +548,7 @@ async function fetchPlaceholders(prefix = 'default') {
  * @param {Element} main The container element
  */
 function updateSectionsStatus(main) {
-  const sections = [...main.querySelectorAll(':scope > div.section')];
+  const sections = [...main.querySelectorAll(':scope div.section')];
   for (let i = 0; i < sections.length; i += 1) {
     const section = sections[i];
     const status = section.dataset.sectionStatus;

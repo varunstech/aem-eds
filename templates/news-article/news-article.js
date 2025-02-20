@@ -7,7 +7,7 @@ function formatDate(dateString) {
   const date = new Date(dateString);
   const day = date.getUTCDate().toString().padStart(2, '0');
   const month = date.toLocaleString('en-US', { month: 'short', timeZone: 'UTC' });
-  const year = date.getUTCFullYear().toString().slice(-2); // Gets last 2 digits of year
+  const year = date.getUTCFullYear().toString();
 
   return `${day} ${month} ${year}`;
 }
@@ -24,7 +24,10 @@ export default async function decorate(block) {
   const ulTemp = ul();
   latestNewsData.forEach((item) => {
     // create li having a having breadcrumb-title as link and publication-date
-    const liTemp = li(a({ href: item.path }, item['breadcrumb-title']), div(formatDate(item['publication-date'])));
+    const liTemp = li(a({ href: item.path }, item['breadcrumb-title']));
+    if (item['publication-date']) {
+      liTemp.appendChild(div(formatDate(item['publication-date'])));
+    }
     ulTemp.appendChild(liTemp);
   });
 
@@ -46,8 +49,10 @@ export default async function decorate(block) {
   const sections = block.querySelectorAll('.section');
   sections.forEach((section) => {
     if (!section.classList.contains('breadcrumb-container')) {
-      section.querySelector('.default-content-wrapper')
-        ?.prepend(p({ class: 'publication-date' }, formatDate(getMetadata('publication-date'))));
+      if (getMetadata('publication-date')) {
+        section.querySelector('.default-content-wrapper')
+          ?.prepend(p({ class: 'publication-date' }, formatDate(getMetadata('publication-date'))));
+      }
       outDiv.appendChild(section);
     }
   });

@@ -257,6 +257,7 @@
      color: var(--text-color);
      text-decoration: underline;
      word-break: break-word;
+     cursor: pointer;
  }
  
  a:hover {
@@ -319,7 +320,15 @@ main .section.blue-background {
 main .section.blue-background * {
     color: var(--background-color) !important;
 }
- 
+
+.block.blue-background {
+  background-color: var(--navy-color);
+  padding: 25px;
+}
+
+.block.blue-background * {
+  color: var(--background-color) !important;
+}
  
  @media (width>=900px) {
      main>.section>div {
