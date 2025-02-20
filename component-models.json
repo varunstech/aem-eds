@@ -16,7 +16,7 @@
       },
       {
         "component": "text",
-        "valueType": "string",
+        "valueType": "date",
         "name": "publication-date",
         "label": "Publication Date"
       },
