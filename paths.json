@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/doe/:/",
-    "/content/doe/configuration:/.helix/config.json",
-    "/content/doe/metadata:/metadata.json"
+    "/content/DOE-Sample-Site-1/:/",
+    "/content/DOE-Sample-Site-1/configuration:/.helix/config.json",
+    "/content/DOE-Sample-Site-1/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/doe/"
+    "/content/DOE-Sample-Site-1/"
   ]
 }
