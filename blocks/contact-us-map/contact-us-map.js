@@ -1,6 +1,5 @@
 import { loadScript } from '../../scripts/aem.js';
-import { p } from '../../scripts/dom-helpers.js';
-import { h3, div } from '../../scripts/dom-helpers.js';
+import { p, h3, div } from '../../scripts/dom-helpers.js';
 
 const markerOnClick = (infoWindow, location, map, marker) => {
   const infoWindowDiv = document.querySelector('.info-window');
@@ -135,18 +134,10 @@ export default function decorate(block) {
       const tempP = p({ class: 'location' });
       let text = '';
       row.querySelectorAll('p').forEach((childP) => {
-        text += childP.textContent + '<br>';
+        text += `${childP.textContent} <br>`;
       });
       tempP.innerHTML = text;
       body.appendChild(tempP);
-      // body.classList.add('location');
-      // [...row.children][0].classList.add('location');
-      // body.appendChild([...row.children][0]);
-      // console.log([...row.children][0]);
-      // [...row.children]?.forEach((child) => {
-      //   body.appendChild(child);
-      // });
-      // body.appendChild(p({ class: 'location' }, row));
     } else if (index === 2) {
       location.phone = row.textContent;
       body.appendChild(p({ class: 'phone' }, location.phone));

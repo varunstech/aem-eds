@@ -108,6 +108,16 @@
   display: none;
 }
 
+.block.contact-us-map .phone {
+  display: flex;
+  flex-direction: row;
+}
+
+.block.contact-us-map .email {
+  display: flex;
+  flex-direction: row;
+}
+
 .block.contact-us-map .location::before,
 .block.contact-us-map .phone::before,
 .block.contact-us-map .email::before {
@@ -123,14 +133,17 @@
 
 .block.contact-us-map .location::before {
   content: "\f041";
+  width: 10px;
 }
 
 .block.contact-us-map .phone::before {
   content: "\f095";
+  width: 10px;
 }
 
 .block.contact-us-map .email::before {
   content: "\f0e0";
+  width: 10px;
 }
 
 .block.contact-us-map .info-window-logo {

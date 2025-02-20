@@ -69,7 +69,8 @@ const buildBreadcrumb = (main) => {
     && main.parentElement) {
     main.prepend(div(buildBlock('breadcrumb', { elems: [] })));
     const breadcrumb = main.querySelector('div');
-    const breadcrumbTitle = getMetadata('breadcrumb-title') || getMetadata('title') || 'Page not found';
+    const path = window.location.pathname?.split('/').pop(); // get last part of the path
+    const breadcrumbTitle = getMetadata('breadcrumb-title') || getMetadata('title') || path || 'Page not found';
     breadcrumb.classList.add('grey-background');
     const fromTheDepartment = getMetadata('from-the-department');
     if (fromTheDepartment) {
