@@ -12,16 +12,20 @@ export default function decorate(block) {
         firstText.replaceWith(h2);
       }
 
-      // Clean up link text and ensure proper spacing
+      // Create link wrapper and move link
       const link = col.querySelector('a');
       if (link) {
         const linkText = link.textContent.trim();
         link.innerHTML = linkText;
         
-        // Move link to bottom if not already last
-        if (link.parentElement !== col || link.nextElementSibling) {
-          col.appendChild(link);
-        }
+        // Create wrapper div for link
+        const linkWrapper = document.createElement('div');
+        linkWrapper.className = 'link-container';
+        
+        // Move link to wrapper
+        link.parentElement.removeChild(link);
+        linkWrapper.appendChild(link);
+        col.appendChild(linkWrapper);
       }
     });
   });

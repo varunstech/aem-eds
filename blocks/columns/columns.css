@@ -50,6 +50,11 @@
   
 }
 
+.columns .link-container {
+  margin-top: auto;
+  padding: 20px 0 0 0;
+}
+
 .columns a {
   color: white;
   text-decoration: none;
@@ -57,13 +62,39 @@
   font-size: 14px;
   display: inline-flex;
   align-items: center;
+  line-height: 0.8;
+  position: relative;
+  padding-bottom: 1px;
+}
+
+.columns a::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: white;
+  transition: none;
+  transform: translateY(1px);
+}
+
+.columns a:hover::before,
+.columns a:focus::before {
+  width: calc(100% - 12px);
+}
+
+.columns a:focus {
+  outline: none;
 }
 
 .columns a::after {
   content: "›";
   margin-left: 8px;
   font-size: 24px;
-  line-height: 1;
+  line-height: 0.5;
+  display: inline-block;
+  transform: translateY(-1px);
 }
 
 @media (max-width: 899px) {
