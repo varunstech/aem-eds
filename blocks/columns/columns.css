@@ -146,7 +146,7 @@
 
   .columns.columns-mobile h2:hover::before,
   .columns.columns-mobile h2:focus::before {
-    width: calc(100% - 2px);
+    width: calc(100% - 22px);
   }
 
   .columns.columns-mobile h2::after {
