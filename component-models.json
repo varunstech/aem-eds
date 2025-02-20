@@ -15,7 +15,7 @@
         "label": "Description"
       },
       {
-        "component": "date",
+        "component": "date-time",
         "valueType": "date",
         "name": "publication-date",
         "label": "Publication Date"
