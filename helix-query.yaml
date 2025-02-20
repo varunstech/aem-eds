@@ -6,6 +6,15 @@ indices:
       - '/**'
     exclude:
       - '/**.json'
+      - '/_drafts/**'
+      - '/_tools/**'
+      - '/sidekick/**'
+      - '/fragments/**'
+      - '/**/fragments/**'
+      - '/nav'
+      - '/**/nav'
+      - '/footer'
+      - '/**/footer'
     target: /query-index.json
     properties:
       lastModified:
@@ -13,4 +22,25 @@ indices:
         value: parseTimestamp(headers["last-modified"], "ddd, DD MMM YYYY hh:mm:ss GMT")
       robots:
         select: head > meta[name="robots"]
+        value: attribute(el, "content")
+      title:
+        select: head > meta[property="og:title"]
+        value: attribute(el, "content")
+      description:
+        select: head > meta[name="og:description"]
+        value: attribute(el, "content")
+      breadcrumb-title:
+        select: head > meta[name="breadcrumb-title"]
+        value: attribute(el, "content")
+      publication-date:
+        select: head > meta[name="publication-date"]
+        value: attribute(el, "content")
+      template:
+        select: head > meta[name="template"]
+        value: attribute(el, "content")
+      from-the-department:
+        select: head > meta[name="from-the-department"]
+        value: attribute(el, "content")
+      image:
+        select: head > meta[property="og:image"]
         value: attribute(el, "content")
