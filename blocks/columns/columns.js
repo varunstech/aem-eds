@@ -53,13 +53,11 @@ export default function decorate(block) {
       const link = contentDiv.querySelector('a');
       if (link) {
         const linkText = link.textContent.trim();
+        // Remove parent paragraph if link is wrapped in one
+        if (link.parentElement.tagName === 'p') {
+          link.parentElement.replaceWith(link);
+        }
         link.innerHTML = linkText;
-        
-        const linkWrapper = document.createElement('div');
-        linkWrapper.className = 'link-container';
-        link.parentElement.removeChild(link);
-        linkWrapper.appendChild(link);
-        col.appendChild(linkWrapper);
       }
     });
   });
