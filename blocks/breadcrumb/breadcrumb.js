@@ -10,34 +10,34 @@ export default async function decorate(block) {
   const breadcrumbs = [];
 
   // Fetch metadata from query-index
-  //   const resp = await fetch('/query-index.json');
-  //   const json = await resp.json();
-  //   const pathsMetadata = json.data;
+  const resp = await fetch('/query-index.json');
+  const json = await resp.json();
+  const pathsMetadata = json.data;
 
-  const pathsMetadata = [
-    {
-      path: '/for-parents',
-      title: 'For Parents - Fort Street Public School',
-      'breadcrumb-title': 'For Parents',
-      'publication-date': '0',
-      template: 'side-nav',
-      'from-the-department': '0',
-      image: '/default-meta-image.png?width=1200&format=pjpg&optimize=medium',
-      lastModified: '1739530047',
-      robots: '0',
-    },
-    {
-      path: '/learning-at-our-school',
-      title: 'Learning at our school - Fort Street Public School',
-      'breadcrumb-title': 'Learning at our school',
-      'publication-date': '0',
-      template: 'side-nav',
-      'from-the-department': '0',
-      image: '/default-meta-image.png?width=1200&format=pjpg&optimize=medium',
-      lastModified: '1739530047',
-      robots: '0',
-    },
-  ];
+  // const pathsMetadata = [
+  //   {
+  //     path: '/for-parents',
+  //     title: 'For Parents - Fort Street Public School',
+  //     'breadcrumb-title': 'For Parents',
+  //     'publication-date': '0',
+  //     template: 'side-nav',
+  //     'from-the-department': '0',
+  //     image: '/default-meta-image.png?width=1200&format=pjpg&optimize=medium',
+  //     lastModified: '1739530047',
+  //     robots: '0',
+  //   },
+  //   {
+  //     path: '/learning-at-our-school',
+  //     title: 'Learning at our school - Fort Street Public School',
+  //     'breadcrumb-title': 'Learning at our school',
+  //     'publication-date': '0',
+  //     template: 'side-nav',
+  //     'from-the-department': '0',
+  //     image: '/default-meta-image.png?width=1200&format=pjpg&optimize=medium',
+  //     lastModified: '1739530047',
+  //     robots: '0',
+  //   },
+  // ];
 
   // Build array of breadcrumb items
   let accumPath = '';
