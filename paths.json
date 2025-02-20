@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/doe/sws/schools/f/fortstreet-p/:/",
-    "/content/doe/sws/schools/f/fortstreet-p/configuration:/.helix/config.json",
-    "/content/doe/sws/schools/f/fortstreet-p/metadata:/metadata.json"
+    "/content/doe/:/",
+    "/content/doe/configuration:/.helix/config.json",
+    "/content/doe/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/doe/sws/schools/f/fortstreet-p/"
+    "/content/doe/"
   ]
 }
