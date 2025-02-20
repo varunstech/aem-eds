@@ -15,8 +15,8 @@
         "label": "Description"
       },
       {
-        "component": "date",
-        "valueType": "string",
+        "component": "date-time",
+        "valueType": "date-time",
         "placeholder": "YYYY-MM-DD",
         "name": "publication-date",
         "label": "Publication Date"
