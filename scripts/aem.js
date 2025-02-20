@@ -366,7 +366,7 @@ function decorateTemplateAndTheme() {
       element.classList.add(toClassName(c.trim()));
     });
   };
-  const template = 'contact-us'; // getMetadata('template'); // todo piyush change this
+  const template = getMetadata('template');
   if (template) addClasses(document.body, template);
   const theme = getMetadata('theme');
   if (theme) addClasses(document.body, theme);
