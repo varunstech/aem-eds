@@ -4,7 +4,7 @@ export default function decorate(block) {
 
   // Add responsive class based on screen width
   const handleResize = () => {
-    if (window.innerWidth <= 992) {
+    if (window.innerWidth <= 960) {
       block.classList.add('columns-mobile');
       
       // For mobile: Make headings clickable

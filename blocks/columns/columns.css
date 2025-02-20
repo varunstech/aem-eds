@@ -3,7 +3,7 @@
 .columns {
   max-width: 1200px;
   margin: 0 auto;
-  top: -105px;
+  top: -65px;
   position: relative;
 }
 
@@ -33,21 +33,17 @@
 .columns h2 {
   margin: 0;
   color: white;
-  font-weight: normal;
+  font-family: "Zilla Slab";
+  font-weight: 700;
   height: 6.0rem;
-    font-size: 1.625rem;
-    line-height: 126%;
-    font-family: "Zilla Slab";
-    font-weight: 700;
-    font-style: 26px;
+  font-size: 1.625rem;
+  line-height: 126%;
 }
 
 .columns p {
   font: 400 16px / 1.5 'Open Sans',sans-serif;
-  font-size: 16px;
   color: white;
   letter-spacing: .01em;
-  
 }
 
 .columns .link-container {
@@ -98,12 +94,12 @@
 }
 
 /* Mobile/Tablet view (below desktop) */
-@media (max-width: 992px) {
+@media (max-width: 960px) {
   .columns.columns-mobile {
     padding: 0;
-    top: -105px;
     margin: 0;
     position: relative;
+    top: -20px;
   }
 
   .columns.columns-mobile > div {
@@ -112,10 +108,12 @@
   }
   
   .columns.columns-mobile > div > div {
-    min-height: auto;
     padding: 0;
     margin-bottom: 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .columns.columns-mobile > div > div:last-child {
+    padding-bottom: 10px;
   }
   
   .columns.columns-mobile h2 {
@@ -123,25 +121,14 @@
     cursor: pointer;
     display: inline-block;
     font-family: "Zilla Slab";
-    font-feature-settings: normal;
-    font-kerning: auto;
-    font-optical-sizing: auto;
     font-size: 16px;
-    font-size-adjust: none;
-    font-stretch: 100%;
-    font-style: normal;
-    font-variant: normal;
     font-weight: 700;
     height: auto;
     letter-spacing: 0.16px;
     line-height: 20.16px;
-    list-style: none;
     margin: 0;
     padding: 8px 24px 0px 0px;
     text-align: left;
-    text-size-adjust: 100%;
-    text-transform: none;
-    unicode-bidi: isolate;
     position: relative;
     white-space: nowrap;
   }
@@ -176,6 +163,12 @@
   .columns.columns-mobile .content-wrapper p,
   .columns.columns-mobile .link-container {
     display: none;
+  }
+
+  .columns.columns-mobile > div > div li {
+    list-style: none;
+    margin: 5px 12px 10px 12px;
+    padding-left: 18px;
   }
 }
 
