@@ -18,7 +18,7 @@ export default async function decorate(block) {
 
   const latestNews = await fetch('/query-index.json');
   let latestNewsData = await latestNews.json();
-  latestNewsData = latestNewsData.data.filter((item) => item.template === 'news-article')
+  latestNewsData = latestNewsData.data.filter((item) => item.template === 'news-article' && item.path.startsWith('/news'))
     .sort((x, y) => new Date(y['publication-date']) - new Date(x['publication-date']))
     .slice(0, 10);
   const ulTemp = ul();
