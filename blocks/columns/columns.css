@@ -179,3 +179,9 @@
     padding: 0;
   }
 }
+
+@media (max-width: 640px) {
+  .columns.columns-mobile > div > div li {
+    padding-left: 0;
+  }
+}
