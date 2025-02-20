@@ -21,7 +21,8 @@
         "name": "publication-date",
         "label": "Publication Date",
         "displayFormat": null,
-        "valueFormat": null
+        "valueFormat": null,
+        "format": "YYYY-MM-DD"
       },
       {
         "component": "text",
