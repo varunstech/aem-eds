@@ -3,5 +3,8 @@
     "/content/DOE-Sample-Site-1/:/",
     "/content/DOE-Sample-Site-1/configuration:/.helix/config.json",
     "/content/DOE-Sample-Site-1/metadata:/metadata.json"
+  ],
+  "includes": [
+    "/content/DOE-Sample-Site-1/"
   ]
 }
