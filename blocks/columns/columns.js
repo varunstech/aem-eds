@@ -2,16 +2,62 @@ export default function decorate(block) {
   const cols = [...block.firstElementChild.children];
   block.classList.add(`columns-${cols.length}-cols`);
 
-  // setup image columns
+  // Add responsive class based on screen width
+  const handleResize = () => {
+    if (window.innerWidth <= 960) {
+      block.classList.add('columns-mobile');
+      
+      // For mobile: Make headings clickable
+      block.querySelectorAll('.columns > div > div').forEach(col => {
+        const heading = col.querySelector('h2');
+        const link = col.querySelector('a');
+        if (heading && link) {
+          heading.style.cursor = 'pointer';
+          heading.onclick = () => {
+            link.click();
+          }
+        }
+      });
+    } else {
+      block.classList.remove('columns-mobile');
+    }
+  };
+
+  // Initial check
+  handleResize();
+
+  // Listen for window resize
+  window.addEventListener('resize', handleResize);
+
   [...block.children].forEach((row) => {
     [...row.children].forEach((col) => {
-      const pic = col.querySelector('picture');
-      if (pic) {
-        const picWrapper = pic.closest('div');
-        if (picWrapper && picWrapper.children.length === 1) {
-          // picture is only content in column
-          picWrapper.classList.add('columns-img-col');
+      // Convert first text element to h2
+      const firstText = col.querySelector('p');
+      if (firstText && !col.querySelector('h1, h2, h3, h4, h5, h6')) {
+        const h2 = document.createElement('h2');
+        h2.textContent = firstText.textContent;
+        firstText.replaceWith(h2);
+      }
+
+      // Ensure proper content structure
+      const content = col.innerHTML;
+      col.innerHTML = ''; // Clear the column
+      
+      // Create proper structure
+      const contentDiv = document.createElement('div');
+      contentDiv.className = 'content-wrapper';
+      contentDiv.innerHTML = content;
+      col.appendChild(contentDiv);
+
+      // Handle link separately
+      const link = contentDiv.querySelector('a');
+      if (link) {
+        const linkText = link.textContent.trim();
+        // Remove parent paragraph if link is wrapped in one
+        if (link.parentElement.tagName === 'p') {
+          link.parentElement.replaceWith(link);
         }
+        link.innerHTML = linkText;
       }
     });
   });

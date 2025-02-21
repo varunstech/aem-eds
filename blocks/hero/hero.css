@@ -3,13 +3,13 @@ main .hero-container > div {
 }
 
 main .hero-container {
-  padding: 0;
+  padding: 0;    
+  max-height: 808px;
+  height: 808px;
 }
 
 .hero {
   position: relative;
-  padding: 32px;
-  min-height: 300px;
 }
 
 .hero h1 {
@@ -29,6 +29,23 @@ main .hero-container {
 
 .hero img {
   object-fit: cover;
-  width: 100%;
-  height: 100%;
+  height: 808px;
 }
+
+@media (max-width: 960px) {
+  .hero {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  main .hero-container {
+    padding: 0;
+    height: auto;   
+  }
+}
+
